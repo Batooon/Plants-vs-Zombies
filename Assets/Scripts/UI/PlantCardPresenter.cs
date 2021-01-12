@@ -1,19 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Data;
+﻿using Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlantCardPresenter : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private Image _plantImage;
-    [SerializeField] private string _costTemplate;
-    [SerializeField] private TextMeshProUGUI _costText;
-
-    public void Init(PlantData plantData)
+    public class PlantCardPresenter : MonoBehaviour
     {
-        _plantImage.sprite = plantData._icon;
-        _costText.text = string.Format(_costTemplate, plantData._cost);
+        [SerializeField] private Image _plantImage;
+        [SerializeField] private string _costTemplate;
+        [SerializeField] private TextMeshProUGUI _costText;
+
+        public void Init(PlantData plantData)
+        {
+            _plantImage.sprite = plantData.Icon;
+            _costText.text = string.Format(_costTemplate, plantData.Cost);
+        }
     }
 }
