@@ -906,7 +906,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc109086c8b3cd149a1356e016fffc3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantsShop: {fileID: 0}
+  _plantsShop: {fileID: 1564990112}
 --- !u!1 &1564990106
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +987,7 @@ GameObject:
   - component: {fileID: 1564990110}
   - component: {fileID: 1564990109}
   - component: {fileID: 1564990108}
+  - component: {fileID: 1564990112}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1011,7 +1012,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 660.2985, y: 101.82568}
+  m_SizeDelta: {x: 650, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1564990108
 MonoBehaviour:
@@ -1030,7 +1031,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1089,6 +1090,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564990106}
   m_CullTransparentMesh: 0
+--- !u!114 &1564990112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564990106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093bcd376b9d2434b8e9af075c99d132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plantCardPrefab: {fileID: 4619929036786884339, guid: 370a7167e34fd2745ada2dadea63facc,
+    type: 3}
+  _plantDatas:
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 150
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 320
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 500
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 65
+  _shopParent: {fileID: 1564990106}
 --- !u!1 &1784844051
 GameObject:
   m_ObjectHideFlags: 0
