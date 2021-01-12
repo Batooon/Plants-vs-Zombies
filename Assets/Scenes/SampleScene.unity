@@ -974,6 +974,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantsShop: {fileID: 1564990112}
+  _plantDatas:
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+    _templatePlant: {fileID: 8835433653409389871, guid: 1596f7869ea040f488da4b701e3016a9,
+      type: 3}
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+    _templatePlant: {fileID: 8835433653409389871, guid: 1596f7869ea040f488da4b701e3016a9,
+      type: 3}
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+    _templatePlant: {fileID: 8835433653409389871, guid: 1596f7869ea040f488da4b701e3016a9,
+      type: 3}
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+    _templatePlant: {fileID: 8835433653409389871, guid: 1596f7869ea040f488da4b701e3016a9,
+      type: 3}
+  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+    _cost: 100
+    _templatePlant: {fileID: 8835433653409389871, guid: 1596f7869ea040f488da4b701e3016a9,
+      type: 3}
 --- !u!1 &1564990106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,18 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCardPrefab: {fileID: 4619929036786884339, guid: 370a7167e34fd2745ada2dadea63facc,
     type: 3}
-  _plantDatas:
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 100
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 150
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 320
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 500
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 65
-  _shopParent: {fileID: 1564990106}
+  _cardsParent: {fileID: 1564990107}
 --- !u!1 &1784844051
 GameObject:
   m_ObjectHideFlags: 0
