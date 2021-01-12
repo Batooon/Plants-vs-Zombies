@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using Logic;
 using UnityEngine;
 
 namespace UI
@@ -8,18 +9,17 @@ namespace UI
     public class PlantsShop : MonoBehaviour
     {
         [SerializeField] private GameObject _plantCardPrefab;
-        [SerializeField] private List<PlantData> _plantDatas;
-        [SerializeField] private GameObject _shopParent;
+        [SerializeField] private Transform _cardsParent;
 
-        public void Init()
+        public void Init(IEnumerable<PlantData> plantDatas)
         {
-            if (_plantCardPrefab.TryGetComponent(out PlantCardPresenter plantCard))
+            if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
             {
-                foreach (var plantData in _plantDatas)
+                foreach (var plantData in plantDatas)
                 {
-                    var plantCardPresenter = Instantiate(_plantCardPrefab, _shopParent.transform)
-                        .GetComponent<PlantCardPresenter>();
-                    plantCardPresenter.Init(plantData);
+                    var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
+                        .GetComponent<PlantCard>();
+                    plantCard.Init(plantData);
                 }
             }
             else
