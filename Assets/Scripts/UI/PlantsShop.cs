@@ -13,15 +13,13 @@ namespace UI
 
         public void Init()
         {
-            if (_plantCardPrefab.TryGetComponent(out PlantCardPresenter plantCardPresenter))
+            if (_plantCardPrefab.TryGetComponent(out PlantCardPresenter plantCard))
             {
                 foreach (var plantData in _plantDatas)
                 {
-                    GameObject plantCard = Instantiate(_plantCardPrefab, _shopParent.transform);
-                    if (plantCard.TryGetComponent(out PlantCardPresenter plant))
-                    {
-                        plant.Init(plantData);
-                    }
+                    var plantCardPresenter = Instantiate(_plantCardPrefab, _shopParent.transform)
+                        .GetComponent<PlantCardPresenter>();
+                    plantCardPresenter.Init(plantData);
                 }
             }
             else
