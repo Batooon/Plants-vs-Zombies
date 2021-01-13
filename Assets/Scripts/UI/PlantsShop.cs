@@ -8,22 +8,29 @@ using UnityEngine.UI;
 
 namespace UI
 {
+    [RequireComponent(typeof(HorizontalLayoutGroup))]
     public class PlantsShop : MonoBehaviour
     {
         [SerializeField] private GameObject _plantCardPrefab;
         [SerializeField] private Transform _cardsParent;
-
+        [SerializeField] private HorizontalLayoutGroup _layout;
+        
         public void Init(IEnumerable<PlantShopData> plantDatas, Tilemap tilemap)
         {
+            _layout = GetComponent<HorizontalLayoutGroup>();
             if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
             {
                 foreach (var plantData in plantDatas)
                 {
                     var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
                         .GetComponent<PlantCard>();
-                    plantCard.Init(plantData,tilemap);
+                    plantCard.Init(plantData, tilemap);
                 }
-                LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+                
+                _layout.CalculateLayoutInputHorizontal();
+                _layout.CalculateLayoutInputVertical();
+                _layout.SetLayoutHorizontal();
+                _layout.SetLayoutVertical();
             }
             else
             {
