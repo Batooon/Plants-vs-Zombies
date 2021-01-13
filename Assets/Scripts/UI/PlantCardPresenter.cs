@@ -11,10 +11,10 @@ namespace UI
         [SerializeField] private string _costTemplate;
         [SerializeField] private TextMeshProUGUI _costText;
 
-        public void Init(PlantData plantData)
+        public void Init(PlantShopData plantShopData)
         {
-            _plantImage.sprite = plantData.Icon;
-            _costText.text = string.Format(_costTemplate, plantData.Cost);
+            _plantImage.sprite = plantShopData.Icon;
+            _costText.text = string.Format(_costTemplate, plantShopData.Cost);
         }
     }
 }
