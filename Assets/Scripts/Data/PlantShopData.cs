@@ -1,7 +1,6 @@
 ﻿using System;
 using Logic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Data
 {
