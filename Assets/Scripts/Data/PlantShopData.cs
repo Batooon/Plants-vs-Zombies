@@ -1,18 +1,19 @@
 ﻿using System;
+using Logic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Data
 {
     [Serializable]
-    public class PlantData
+    public class PlantShopData
     {
         [SerializeField] private Sprite _icon;
         [SerializeField] private int _cost;
-        [SerializeField] private GameObject _templatePlant;
+        [SerializeField] private PlantTemplate _templatePlant;
 
         public Sprite Icon => _icon;
         public int Cost => _cost;
-        public GameObject TemplatePlant => _templatePlant;
+        public PlantTemplate TemplatePlant => _templatePlant;
     }
 }
