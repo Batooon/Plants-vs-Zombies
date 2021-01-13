@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Data;
 using Logic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -11,7 +13,7 @@ namespace UI
         [SerializeField] private GameObject _plantCardPrefab;
         [SerializeField] private Transform _cardsParent;
 
-        public void Init(IEnumerable<PlantData> plantDatas)
+        public void Init(IEnumerable<PlantShopData> plantDatas, Tilemap tilemap)
         {
             if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
             {
@@ -19,12 +21,13 @@ namespace UI
                 {
                     var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
                         .GetComponent<PlantCard>();
-                    plantCard.Init(plantData);
+                    plantCard.Init(plantData,tilemap);
                 }
+                LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
             }
             else
             {
-                throw new Exception("Plant card prefab does not contain a PlantCardPresenter.cs");
+                throw new Exception("Plant card prefab does not contain a PlantCard.cs");
             }
         }
     }
