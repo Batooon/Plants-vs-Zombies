@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475986486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.31, y: 1.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1784844053}
@@ -648,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 5.333333, y: -1.49, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -819,6 +819,10 @@ MonoBehaviour:
     _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
       type: 3}
   _tilemap: {fileID: 475986489}
+  _tile: {fileID: 11400000, guid: 849b59eee0d700f46b81ea157f6aebbf, type: 2}
+  _fieldWidth: 9
+  _fieldHeight: 4
+  _plant: {fileID: 6958189125522477878, guid: 1596f7869ea040f488da4b701e3016a9, type: 3}
 --- !u!1 &1564990106
 GameObject:
   m_ObjectHideFlags: 0
