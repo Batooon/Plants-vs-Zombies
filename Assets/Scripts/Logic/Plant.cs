@@ -1,17 +1,33 @@
+using System;
 using UnityEngine;
+using Data;
 
-public class Plant : MonoBehaviour
+namespace Logic
 {
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField]private Transform _attackPoint;
+    public class Plant : MonoBehaviour
+    {
+        private int _health;
 
-    public void Init()
-    {
-        InvokeRepeating(nameof(Attack), 0f, .3f);
-    }
-    
-    private void Attack()
-    {
-        GameObject bullet = Instantiate(_bulletPrefab, _attackPoint.position, Quaternion.identity);
+        /*public void Init(PlantData plantData)
+        {
+            _health = plantData.Health;
+        }*/
+
+        private void Awake()
+        {
+            _health = 100;
+        }
+
+        public void GetDamage(int amount)
+        {
+            _health -= amount;
+            if(_health<=0)
+                Die();
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }
