@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace Logic
 {
@@ -8,29 +7,35 @@ namespace Logic
     {
         private Vector2 _initialPosition;
         private SpriteRenderer _spriteRenderer;
-        private Tilemap _tilemap;
+        private Field _field;
+        private Plant _fieldPlant;
 
-        public void Init(Vector2 initialPosition, Tilemap tilemap)
+        public void Init(Vector2 initialPosition, Field field, Plant plantOnField)
         {
-            _tilemap = tilemap;
+            _fieldPlant = plantOnField;
+            _field = field;
             _initialPosition = initialPosition;
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _spriteRenderer.enabled = false;
         }
 
-        private void OnMouseDrag()
+        private void OnMouseDown()
         {
             _spriteRenderer.enabled = true;
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPosition = _tilemap.WorldToCell(mousePosition);
-            Vector3 position = _tilemap.GetCellCenterWorld(cellPosition);
+        }
 
-            transform.position = position;
+        private void OnMouseDrag()
+        {
+            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            transform.position = _field.IsPointerOverField(Input.mousePosition)
+                ? _field.GetCellCenterCoordinates(Input.mousePosition)
+                : mousePosition;
         }
 
         private void OnMouseUp()
         {
-            //Если отпустил не над клеткой или над занятой клеткой
+            _field.TryPlacePlant(Input.mousePosition, _fieldPlant.gameObject);
             _spriteRenderer.enabled = false;
             transform.position = _initialPosition;
         }
