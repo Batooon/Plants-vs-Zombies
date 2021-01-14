@@ -1,7 +1,6 @@
 using Data;
 using UI;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace Logic
 {
@@ -10,11 +9,13 @@ namespace Logic
     {
         private PlantTemplate _templatePlant;
         private bool _isCardAvailable = true;
-        private Tilemap _tilemap;
+        private Field _field;
+        private PlantShopData _plantShopData;
 
-        public void Init(PlantShopData plantShopData, Tilemap tilemap)
+        public void Init(PlantShopData plantShopData, Field field)
         {
-            _tilemap = tilemap;
+            _plantShopData = plantShopData;
+            _field = field;
             _templatePlant = plantShopData.TemplatePlant;
             GetComponent<PlantCardPresenter>().Init(plantShopData);
         }
@@ -31,7 +32,7 @@ namespace Logic
             Vector2 spawnPosition = rectTransform.position;
             PlantTemplate plantTemplate = Instantiate(_templatePlant.gameObject, spawnPosition, Quaternion.identity)
                 .GetComponent<PlantTemplate>();
-            plantTemplate.Init(spawnPosition, _tilemap);
+            plantTemplate.Init(spawnPosition, _field, _plantShopData.PlantOnTheField);
         }
         
         //TODO: Сделать затемнение карточки, и постепенное её восстановление
