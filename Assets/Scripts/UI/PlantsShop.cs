@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Data;
 using Logic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 namespace UI
@@ -15,7 +14,7 @@ namespace UI
         [SerializeField] private Transform _cardsParent;
         [SerializeField] private HorizontalLayoutGroup _layout;
         
-        public void Init(IEnumerable<PlantShopData> plantDatas, Tilemap tilemap)
+        public void Init(IEnumerable<PlantShopData> plantDatas, Field field)
         {
             _layout = GetComponent<HorizontalLayoutGroup>();
             if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
@@ -24,7 +23,7 @@ namespace UI
                 {
                     var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
                         .GetComponent<PlantCard>();
-                    plantCard.Init(plantData, tilemap);
+                    plantCard.Init(plantData, field);
                 }
                 
                 _layout.CalculateLayoutInputHorizontal();
