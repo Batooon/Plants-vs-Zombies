@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace Logic
 {
-    [SerializeField] private float _speed;
-
-    private void Update()
+    public class Bullet : MonoBehaviour
     {
-        transform.position += Vector3.right * _speed * Time.deltaTime;
+        [SerializeField] private float _speed;
+
+        private void Update()
+        {
+            transform.position += Vector3.right * _speed * Time.deltaTime;
+        }
     }
 }
