@@ -6,22 +6,14 @@ namespace Logic
 {
     public class Plant : MonoBehaviour
     {
-        private int _health;
+        [SerializeField] protected PlantData _plantData;
 
-        /*public void Init(PlantData plantData)
-        {
-            _health = plantData.Health;
-        }*/
-
-        private void Awake()
-        {
-            _health = 100;
-        }
-
+        public int Health => _plantData.Health;
+        
         public void GetDamage(int amount)
         {
-            _health -= amount;
-            if(_health<=0)
+            _plantData.Health -= amount;
+            if (_plantData.Health <= 0)
                 Die();
         }
 
