@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Data;
+using Logic;
 using UI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -17,8 +18,8 @@ public class EntryPoint : MonoBehaviour
     
     private void Awake()
     {
-        _plantsShop.Init(_plantDatas, _tilemap);
-        
         _plantsField = new Field(_fieldWidth, _fieldHeight, _tilemap);
+        
+        _plantsShop.Init(_plantDatas, _plantsField);
     }
 }
