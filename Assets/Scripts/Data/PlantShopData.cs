@@ -15,7 +15,6 @@ namespace Data
         public Sprite Icon => _icon;
         public int Cost => _cost;
         public PlantTemplate TemplatePlant => _templatePlant;
-
         public Plant PlantToSpawn => _plantToSpawn;
     }
 }
