@@ -32,6 +32,11 @@ namespace Logic
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
         }
 
+        public float GetCellCenterVerticalPosition(int line)
+        {
+            return _renderField.GetCellCenterWorld(new Vector3Int(0, line, 0)).y;
+        }
+
         public bool IsPointerOverField(Vector3 pointerPosition)
         {
             var cellPosition = GetCellCoordinates(pointerPosition);
@@ -39,19 +44,19 @@ namespace Logic
             return IsOnFieldCriteria(cellPosition);
         }
 
+        public Vector3 GetCellCenterCoordinates(Vector3 mousePosition)
+        {
+            var cellPosition = GetCellCoordinates(mousePosition);
+            
+            return _renderField.GetCellCenterWorld(cellPosition);
+        }
+        
         private bool IsOnFieldCriteria(Vector3Int cell)
         {
             return _cells.GetLength(0) > cell.x
                    && _cells.GetLength(1) > cell.y
                    && cell.x >= 0
                    && cell.y >= 0;
-        }
-
-        public Vector3 GetCellCenterCoordinates(Vector3 mousePosition)
-        {
-            var cellPosition = GetCellCoordinates(mousePosition);
-            
-            return _renderField.GetCellCenterWorld(cellPosition);
         }
 
         private Vector3Int GetCellCoordinates(Vector3 pointerPosition)
