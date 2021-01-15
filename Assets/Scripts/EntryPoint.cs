@@ -8,11 +8,11 @@ using UnityEngine.Tilemaps;
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private PlantsShop _plantsShop;
+    [SerializeField] private ZombieWavesSpawner _zombieWavesSpawner;
     [SerializeField] private List<PlantShopData> _plantDatas;
     [SerializeField] private Tilemap _tilemap;
     [SerializeField] private int _fieldWidth;
     [SerializeField] private int _fieldHeight;
-    [SerializeField] private GameObject _plant;
 
     private Field _plantsField;
     
@@ -21,5 +21,7 @@ public class EntryPoint : MonoBehaviour
         _plantsField = new Field(_fieldWidth, _fieldHeight, _tilemap);
         
         _plantsShop.Init(_plantDatas, _plantsField);
+
+        _zombieWavesSpawner.Init(_plantsField);
     }
 }
