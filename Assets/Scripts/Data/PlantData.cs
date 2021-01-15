@@ -8,6 +8,10 @@ namespace Data
     {
         [SerializeField] private int _health;
 
-        public int Health => _health;
+        public int Health
+        {
+            get => _health;
+            set => _health = value;
+        }
     }
 }
