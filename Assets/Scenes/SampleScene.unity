@@ -791,17 +791,17 @@ MonoBehaviour:
     _zombies:
     - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
         type: 3}
-      _speed: 1.5
+      _speed: 0.5
       _lineIndexToSpawn: 3
       _delaySpawnTime: 0
     - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
         type: 3}
-      _speed: 1.5
+      _speed: 0.5
       _lineIndexToSpawn: 0
       _delaySpawnTime: 3
     - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
         type: 3}
-      _speed: 1.5
+      _speed: 0.5
       _lineIndexToSpawn: 2
       _delaySpawnTime: 5
 --- !u!4 &698964833
