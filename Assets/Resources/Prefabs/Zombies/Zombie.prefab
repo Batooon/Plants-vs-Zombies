@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delayAttack: 1
   _damage: 50
+  _health: 100
 --- !u!61 &-2345280736445384254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,5 +145,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
