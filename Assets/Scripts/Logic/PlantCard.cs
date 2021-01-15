@@ -32,7 +32,7 @@ namespace Logic
             Vector2 spawnPosition = rectTransform.position;
             PlantTemplate plantTemplate = Instantiate(_templatePlant.gameObject, spawnPosition, Quaternion.identity)
                 .GetComponent<PlantTemplate>();
-            plantTemplate.Init(spawnPosition, _field, _plantShopData.PlantOnTheField);
+            plantTemplate.Init(spawnPosition, _field, _plantShopData.PlantToSpawn);
         }
         
         //TODO: Сделать затемнение карточки, и постепенное её восстановление
