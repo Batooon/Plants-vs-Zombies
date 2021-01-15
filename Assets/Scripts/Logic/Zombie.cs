@@ -8,6 +8,7 @@ namespace Logic
     {
         [SerializeField] private float _delayAttack;
         [SerializeField] private int _damage;
+        [SerializeField] private int _health;
 
         private float _speed;
         private bool _attacking;
@@ -22,6 +23,18 @@ namespace Logic
             if (_attacking)
                 return;
             transform.position += Vector3.left * _speed * Time.deltaTime;
+        }
+
+        public void GetDamage(int amount)
+        {
+            _health -= amount;
+            if (_health <= 0)
+                Die();
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
