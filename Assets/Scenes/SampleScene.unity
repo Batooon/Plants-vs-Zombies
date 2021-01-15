@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &301832085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 301832086}
+  m_Layer: 0
+  m_Name: Spawn Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &301832086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301832085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11, y: 2.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475986486
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +756,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &698964831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698964833}
+  - component: {fileID: 698964832}
+  m_Layer: 0
+  m_Name: Waves Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &698964832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698964831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8552553541b4255ae683ff695bc759b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnLine: {fileID: 301832086}
+  _zombieWaves:
+  - _delayStartTime: 0
+    _zombies:
+    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
+        type: 3}
+      _speed: 1.5
+      _lineIndexToSpawn: 3
+      _delaySpawnTime: 0
+    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
+        type: 3}
+      _speed: 1.5
+      _lineIndexToSpawn: 0
+      _delaySpawnTime: 3
+    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
+        type: 3}
+      _speed: 1.5
+      _lineIndexToSpawn: 2
+      _delaySpawnTime: 5
+--- !u!4 &698964833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698964831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &879171496
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 879171498}
+  - component: {fileID: 879171497}
+  m_Layer: 0
+  m_Name: Unity-RecorderBindings
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &879171497
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879171496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24bc7e8573847adbdf1198360b3c794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_References:
+    m_Keys:
+    - 4962012ab2d1cc44f98f6cd7440bd3fe
+    m_Values:
+    - {fileID: 519420028}
+--- !u!4 &879171498
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879171496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038938106
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,41 +1009,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantsShop: {fileID: 1564990112}
+  _zombieWavesSpawner: {fileID: 698964832}
   _plantDatas:
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
+  - _icon: {fileID: -6178020182079693598, guid: fe1a90573d3f4ca4496c84c76842bbef,
+      type: 3}
     _cost: 100
-    _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
+    _templatePlant: {fileID: 3336132713280332280, guid: 4648209630f987e4a8928b3dd6654c9f,
       type: 3}
-    _plantOnTheField: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
-      type: 3}
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 100
-    _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
-      type: 3}
-    _plantOnTheField: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
+    _plantToSpawn: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
       type: 3}
   - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
     _cost: 100
     _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
       type: 3}
-    _plantOnTheField: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
-      type: 3}
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 100
-    _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
-      type: 3}
-    _plantOnTheField: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
-      type: 3}
-  - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 100
-    _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
-      type: 3}
-    _plantOnTheField: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
+    _plantToSpawn: {fileID: 4367199279585121373, guid: 4613758d49e9ac64185d88c0c69b99c5,
       type: 3}
   _tilemap: {fileID: 475986489}
   _fieldWidth: 9
   _fieldHeight: 4
-  _plant: {fileID: 6958189125522477878, guid: 1596f7869ea040f488da4b701e3016a9, type: 3}
 --- !u!1 &1564990106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1143,7 @@ MonoBehaviour:
   _plantCardPrefab: {fileID: 4619929036786884339, guid: 370a7167e34fd2745ada2dadea63facc,
     type: 3}
   _cardsParent: {fileID: 1564990107}
-  _layout: {fileID: 0}
+  _layout: {fileID: 1564990108}
 --- !u!1 &1784844051
 GameObject:
   m_ObjectHideFlags: 0
