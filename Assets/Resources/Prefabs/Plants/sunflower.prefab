@@ -129,10 +129,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantData:
     _health: 150
-  _delayAction: 30
-  _objectToInstantiate: {fileID: 8857943797712856519, guid: 1f6b5fef3904f5249b196b10a5b81ce4,
+  _delayAction: 1
+  _objectToInstantiate: {fileID: 30951230499660659, guid: 1f6b5fef3904f5249b196b10a5b81ce4,
     type: 3}
   _spawnPoint: {fileID: 4367199279552411445}
+  _sunAmount: 50
 --- !u!61 &1145406004029815314
 BoxCollider2D:
   m_ObjectHideFlags: 0
