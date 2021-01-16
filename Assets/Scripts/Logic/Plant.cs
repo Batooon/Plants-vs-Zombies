@@ -7,8 +7,13 @@ namespace Logic
     public class Plant : MonoBehaviour
     {
         [SerializeField] protected PlantData _plantData;
-
         public int Health => _plantData.Health;
+        protected PlayerData _playerData;
+        
+        public void Init(PlayerData playerData)
+        {
+            _playerData = playerData;
+        }
         
         public void GetDamage(int amount)
         {
