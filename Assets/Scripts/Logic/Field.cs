@@ -1,3 +1,4 @@
+using Data;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,16 +10,18 @@ namespace Logic
         private readonly int _width;
         private readonly int _height;
         private readonly Tilemap _renderField;
+        private readonly PlayerData _playerData;
     
-        public Field(int width, int height, Tilemap renderField)
+        public Field(int width, int height, Tilemap renderField, PlayerData playerData)
         {
             _width = width;
             _height = height;
             _renderField = renderField;
+            _playerData = playerData;
             GenerateEmptyField();
         }
 
-        public void TryPlacePlant(Vector3 mousePosition, GameObject plant)
+        public void TryPlacePlant(Vector3 mousePosition, Plant plant)
         {
             var cellPosition = GetCellCoordinates(mousePosition);
 
@@ -28,7 +31,10 @@ namespace Logic
             if (_cells[cellPosition.x, cellPosition.y].IsEmpty == false)
                 return;
 
-            Object.Instantiate(plant, GetCellCenterCoordinates(mousePosition), Quaternion.identity);
+            Plant placedPlant = Object
+                .Instantiate(plant.gameObject, GetCellCenterCoordinates(mousePosition), Quaternion.identity)
+                .GetComponent<Plant>();
+            placedPlant.Init(_playerData);
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
         }
 
