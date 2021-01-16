@@ -35,7 +35,7 @@ namespace Logic
 
         private void OnMouseUp()
         {
-            _field.TryPlacePlant(Input.mousePosition, _fieldPlant.gameObject);
+            _field.TryPlacePlant(Input.mousePosition, _fieldPlant);
             _spriteRenderer.enabled = false;
             transform.position = _initialPosition;
         }
