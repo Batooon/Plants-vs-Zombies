@@ -1,30 +1,28 @@
+using System;
 using UnityEngine;
 
 namespace Logic
 {
-    [RequireComponent(typeof(SpriteRenderer))]
     public class PlantTemplate : MonoBehaviour
     {
-        private Vector2 _initialPosition;
-        private SpriteRenderer _spriteRenderer;
         private Field _field;
         private Plant _fieldPlant;
 
-        public void Init(Vector2 initialPosition, Field field, Plant plantOnField)
+        public void Init(Field field, Plant plantOnField)
         {
             _fieldPlant = plantOnField;
             _field = field;
-            _initialPosition = initialPosition;
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _spriteRenderer.enabled = false;
         }
 
-        private void OnMouseDown()
+        private void Update()
         {
-            _spriteRenderer.enabled = true;
+            if(Input.GetMouseButtonUp(0))
+                TryPlacePlant();
+            if (Input.GetMouseButton(0))
+                Drag();
         }
 
-        private void OnMouseDrag()
+        private void Drag()
         {
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
@@ -33,11 +31,9 @@ namespace Logic
                 : mousePosition;
         }
 
-        private void OnMouseUp()
+        private void TryPlacePlant()
         {
             _field.TryPlacePlant(Input.mousePosition, _fieldPlant);
-            _spriteRenderer.enabled = false;
-            transform.position = _initialPosition;
         }
     }
 }
