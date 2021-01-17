@@ -11,10 +11,12 @@ namespace Data
         [SerializeField] private int _cost;
         [SerializeField] private PlantTemplate _templatePlant;
         [SerializeField] private Plant _plantToSpawn;
+        [SerializeField] private float _restoreTime;
 
         public Sprite Icon => _icon;
         public int Cost => _cost;
         public PlantTemplate TemplatePlant => _templatePlant;
         public Plant PlantToSpawn => _plantToSpawn;
+        public float RestoreTime => _restoreTime;
     }
 }
