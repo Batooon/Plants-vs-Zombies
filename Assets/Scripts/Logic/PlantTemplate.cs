@@ -7,11 +7,13 @@ namespace Logic
     {
         private Field _field;
         private Plant _fieldPlant;
+        private event Action _callback;
 
-        public void Init(Field field, Plant plantOnField)
+        public void Init(Field field, Plant plantOnField, Action callback)
         {
             _fieldPlant = plantOnField;
             _field = field;
+            _callback = callback;
         }
 
         private void Update()
@@ -33,7 +35,8 @@ namespace Logic
 
         private void TryPlacePlant()
         {
-            _field.TryPlacePlant(Input.mousePosition, _fieldPlant);
+            _field.TryPlacePlant(Input.mousePosition, _fieldPlant, _callback);
+            Destroy(gameObject);
         }
     }
 }
