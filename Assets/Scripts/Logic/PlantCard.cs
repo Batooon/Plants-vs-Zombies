@@ -24,7 +24,6 @@ namespace Logic
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("Down");
             SpawnTemplate();
         }
         
