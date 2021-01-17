@@ -21,8 +21,8 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         _plantsField = new Field(_fieldWidth, _fieldHeight, _tilemap, _playerData);
-        
-        _plantsShop.Init(_plantDatas, _plantsField);
+
+        _plantsShop.Init(_plantDatas, _plantsField, _playerData);
 
         _zombieWavesSpawner.Init(_plantsField);
 
