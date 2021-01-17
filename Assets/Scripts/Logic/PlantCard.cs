@@ -1,11 +1,13 @@
+using System;
 using Data;
 using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Logic
 {
     [RequireComponent(typeof(PlantCardPresenter))]
-    public class PlantCard : MonoBehaviour
+    public class PlantCard : MonoBehaviour, IPointerDownHandler
     {
         private PlantTemplate _templatePlant;
         private bool _isCardAvailable = true;
@@ -20,11 +22,12 @@ namespace Logic
             GetComponent<PlantCardPresenter>().Init(plantShopData);
         }
 
-        private void Start()
+        public void OnPointerDown(PointerEventData eventData)
         {
+            Debug.Log("Down");
             SpawnTemplate();
         }
-
+        
         private void SpawnTemplate()
         {
             RectTransform rectTransform = GetComponent<RectTransform>();
@@ -32,7 +35,7 @@ namespace Logic
             Vector2 spawnPosition = rectTransform.position;
             PlantTemplate plantTemplate = Instantiate(_templatePlant.gameObject, spawnPosition, Quaternion.identity)
                 .GetComponent<PlantTemplate>();
-            plantTemplate.Init(spawnPosition, _field, _plantShopData.PlantToSpawn);
+            plantTemplate.Init(_field, _plantShopData.PlantToSpawn);
         }
         
         //TODO: Сделать затемнение карточки, и постепенное её восстановление
