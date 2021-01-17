@@ -13,8 +13,8 @@ namespace UI
         [SerializeField] private GameObject _plantCardPrefab;
         [SerializeField] private Transform _cardsParent;
         [SerializeField] private HorizontalLayoutGroup _layout;
-        
-        public void Init(IEnumerable<PlantShopData> plantDatas, Field field)
+
+        public void Init(IEnumerable<PlantShopData> plantDatas, Field field, PlayerData playerData)
         {
             _layout = GetComponent<HorizontalLayoutGroup>();
             if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
@@ -23,7 +23,7 @@ namespace UI
                 {
                     var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
                         .GetComponent<PlantCard>();
-                    plantCard.Init(plantData, field);
+                    plantCard.Init(plantData, field, playerData);
                 }
                 
                 _layout.CalculateLayoutInputHorizontal();
