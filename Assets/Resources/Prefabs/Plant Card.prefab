@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 4619929036786884341}
   - component: {fileID: 4619929036786884343}
   - component: {fileID: 5824476121630214835}
+  - component: {fileID: 245331496183339800}
   m_Layer: 5
   m_Name: Plant Card
   m_TagString: Untagged
@@ -374,6 +375,8 @@ MonoBehaviour:
   _plantImage: {fileID: 4619929036393564891}
   _costTemplate: '{0}'
   _costText: {fileID: 4619929035742177198}
+  _restoreStartingAlpha: 0.3
+  _restoreMaxAlpha: 1
 --- !u!114 &5824476121630214835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +389,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f6304e70304cbfa352121126cb5ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &245331496183339800
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619929036786884339}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4619929037402132313
 GameObject:
   m_ObjectHideFlags: 0
