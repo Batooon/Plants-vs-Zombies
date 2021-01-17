@@ -1,6 +1,8 @@
+using System;
 using Data;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Object = UnityEngine.Object;
 
 namespace Logic
 {
@@ -11,7 +13,7 @@ namespace Logic
         private readonly int _height;
         private readonly Tilemap _renderField;
         private readonly PlayerData _playerData;
-    
+
         public Field(int width, int height, Tilemap renderField, PlayerData playerData)
         {
             _width = width;
@@ -21,7 +23,7 @@ namespace Logic
             GenerateEmptyField();
         }
 
-        public void TryPlacePlant(Vector3 mousePosition, Plant plant)
+        public void TryPlacePlant(Vector3 mousePosition, Plant plant, Action callback)
         {
             var cellPosition = GetCellCoordinates(mousePosition);
 
@@ -36,6 +38,7 @@ namespace Logic
                 .GetComponent<Plant>();
             placedPlant.Init(_playerData);
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
+            callback?.Invoke();
         }
 
         public float GetCellCenterVerticalPosition(int line)
