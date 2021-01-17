@@ -1095,12 +1095,14 @@ MonoBehaviour:
       type: 3}
     _plantToSpawn: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
       type: 3}
+    _restoreTime: 2
   - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
-    _cost: 100
+    _cost: 50
     _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
       type: 3}
     _plantToSpawn: {fileID: 4367199279585121373, guid: 4613758d49e9ac64185d88c0c69b99c5,
       type: 3}
+    _restoreTime: 3
   _tilemap: {fileID: 475986489}
   _playerPresenter: {fileID: 1930900878}
   _fieldWidth: 9
