@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4367199279552411445}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: shoot point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4367199279585121373}
   - component: {fileID: 1145406004029815314}
   - component: {fileID: 1968113384659632508}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: sunflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantData:
-    _health: 150
-  _delayAction: 1
+    _health: 350
+  _delayAction: 10
   _objectToInstantiate: {fileID: 30951230499660659, guid: 1f6b5fef3904f5249b196b10a5b81ce4,
     type: 3}
   _spawnPoint: {fileID: 4367199279552411445}
