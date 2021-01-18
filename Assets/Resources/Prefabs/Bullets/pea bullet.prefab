@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 971254699874597737}
   - component: {fileID: -532126203739543774}
   - component: {fileID: 7552835923918161844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pea bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0252781a21a34aceb8bf0ef78a7684a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _damage: 100
+  _speed: 4
+  _damage: 30
 --- !u!58 &-532126203739543774
 CircleCollider2D:
   m_ObjectHideFlags: 0
