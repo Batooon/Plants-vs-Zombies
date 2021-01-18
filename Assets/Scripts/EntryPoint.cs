@@ -13,6 +13,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private List<PlantShopData> _plantDatas;
     [SerializeField] private Tilemap _tilemap;
     [SerializeField] private PlayerPresenter _playerPresenter;
+    [SerializeField] private SkySunSpawner _sunSkySpawner;
     [SerializeField] private int _fieldWidth;
     [SerializeField] private int _fieldHeight;
 
@@ -27,5 +28,7 @@ public class EntryPoint : MonoBehaviour
         _zombieWavesSpawner.Init(_plantsField);
 
         _playerPresenter.Init(_playerData);
+
+        _sunSkySpawner.Init(_playerData);
     }
 }
