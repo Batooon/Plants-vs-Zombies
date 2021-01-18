@@ -726,7 +726,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -750,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.333333, y: 3.01, z: -10}
+  m_LocalPosition: {x: 4.63, y: 3.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -787,23 +787,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnLine: {fileID: 301832086}
   _zombieWaves:
-  - _delayStartTime: 0
+  - _delayStartTime: 20
     _zombies:
-    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.5
-      _lineIndexToSpawn: 3
+      _speed: 0.2
+      _lineIndexToSpawn: 2
       _delaySpawnTime: 0
-    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
-        type: 3}
-      _speed: 0.5
-      _lineIndexToSpawn: 0
-      _delaySpawnTime: 3
-    - _zombie: {fileID: 3851172951114789987, guid: 95ad8cbfede902d4cb43290fdad74ba0,
+    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
         type: 3}
       _speed: 0.5
       _lineIndexToSpawn: 2
+      _delaySpawnTime: 10
+  - _delayStartTime: 5
+    _zombies:
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 1
+      _delaySpawnTime: 0
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 0
       _delaySpawnTime: 5
+    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+        type: 3}
+      _speed: 0.5
+      _lineIndexToSpawn: 3
+      _delaySpawnTime: 5
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 3
+      _delaySpawnTime: 5
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 2
+      _delaySpawnTime: 0.5
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 0
+      _delaySpawnTime: 0.5
+    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+        type: 3}
+      _speed: 0.5
+      _lineIndexToSpawn: 3
+      _delaySpawnTime: 3
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 1
+      _delaySpawnTime: 2
+    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+        type: 3}
+      _speed: 0.2
+      _lineIndexToSpawn: 1
+      _delaySpawnTime: 2
 --- !u!4 &698964833
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,7 +1052,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1095,18 +1137,77 @@ MonoBehaviour:
       type: 3}
     _plantToSpawn: {fileID: 6744302452482721115, guid: 07c8d1b4d2637fe42b2bf8e91f70355c,
       type: 3}
-    _restoreTime: 2
+    _restoreTime: 5
   - _icon: {fileID: 21300000, guid: 7f314ebbabf99754098756991c94f11a, type: 3}
     _cost: 50
     _templatePlant: {fileID: 866840264637422474, guid: 1596f7869ea040f488da4b701e3016a9,
       type: 3}
     _plantToSpawn: {fileID: 4367199279585121373, guid: 4613758d49e9ac64185d88c0c69b99c5,
       type: 3}
-    _restoreTime: 3
+    _restoreTime: 5
+  - _icon: {fileID: 6720208684698052698, guid: 34c317e2e52c7534db87b7784f746381, type: 3}
+    _cost: 175
+    _templatePlant: {fileID: 866840264637422474, guid: 0f1b629f76290b74ebb42cee4d5580a9,
+      type: 3}
+    _plantToSpawn: {fileID: 6744302452482721115, guid: 4007f6d2b598fc24cb654d81eb908d1f,
+      type: 3}
+    _restoreTime: 5
+  - _icon: {fileID: 7518358296407200633, guid: 2adf5fa4d6b34574e975af481708ba44, type: 3}
+    _cost: 250
+    _templatePlant: {fileID: 866840264637422474, guid: 839a148fd8dc06c419f15c8901606e4b,
+      type: 3}
+    _plantToSpawn: {fileID: 6744302452482721115, guid: c8d931ecaa0b9fd45bbf0a0945d0cc55,
+      type: 3}
+    _restoreTime: 5.5
+  - _icon: {fileID: 3326226717839825740, guid: 2cb984f33b0827b4c9a7617c25115ba2, type: 3}
+    _cost: 150
+    _templatePlant: {fileID: 866840264637422474, guid: 9a2a3b0c59946f1419a7f5bd1b60b7b3,
+      type: 3}
+    _plantToSpawn: {fileID: 6744302452482721115, guid: 5e5f4db07aae572409b16ca4780ac966,
+      type: 3}
+    _restoreTime: 5.5
+  - _icon: {fileID: 21300000, guid: 9f9c8d6440a0a2d46844441dbd33322b, type: 3}
+    _cost: 50
+    _templatePlant: {fileID: 866840264637422474, guid: e0b0e4c0bd1c37d46addfdc44e618c1b,
+      type: 3}
+    _plantToSpawn: {fileID: 2366282558127633425, guid: 56ea8462e374d83498da52bdae102c09,
+      type: 3}
+    _restoreTime: 20
   _tilemap: {fileID: 475986489}
   _playerPresenter: {fileID: 1930900878}
+  _sunSkySpawner: {fileID: 1574250492}
   _fieldWidth: 9
   _fieldHeight: 4
+--- !u!1 &1564361494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564361495}
+  m_Layer: 0
+  m_Name: Sun Spawn Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564361495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564361494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.78, y: 8.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564990106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1325,57 @@ MonoBehaviour:
     type: 3}
   _cardsParent: {fileID: 1564990107}
   _layout: {fileID: 1564990108}
+--- !u!1 &1574250491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574250493}
+  - component: {fileID: 1574250492}
+  m_Layer: 0
+  m_Name: Sky Sun Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1574250492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574250491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1651b2800aee4a9799e8bf6008d50ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sun: {fileID: 30951230499660659, guid: 1f6b5fef3904f5249b196b10a5b81ce4, type: 3}
+  _leftBorder: 0.44
+  _rightBorder: 8.69
+  _spawnPosition: {fileID: 1564361495}
+  _duration: 8
+  _speed: 1
+  _periodTime: 10
+  _sunsAmount: 50
+--- !u!4 &1574250493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574250491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784844051
 GameObject:
   m_ObjectHideFlags: 0
