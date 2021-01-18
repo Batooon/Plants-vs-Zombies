@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -46,16 +47,26 @@ namespace Logic
             }
         }
 
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (other.gameObject.TryGetComponent(out Plant plant))
+            {
+                _attacking = false;
+            }
+        }
+
         private IEnumerator Eat(Plant plant)
         {
-            while (plant.Health > 0)
+            while (_attacking)
             {
-                plant.GetDamage(_damage);
-                if (plant.Health <= 0)
+                if (plant.Health - _damage <= 0)
                 {
+                    plant.GetDamage(_damage);
                     _attacking = false;
                     yield break;
                 }
+                
+                plant.GetDamage(_damage);
                 yield return new WaitForSecondsRealtime(_delayAttack);
             }
         }
