@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6744302452482721115}
   - component: {fileID: -2127864287518324072}
   - component: {fileID: -163338108054255472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pea plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantData:
-    _health: 100
+    _health: 400
   _shootPoint: {fileID: 6744302452536605128}
-  _delayShoot: 1
+  _delayShoot: 4
   _bullet: {fileID: 971254699874597737, guid: ba2b507b442eefd4598e15ef59129890, type: 3}
 --- !u!61 &-2127864287518324072
 BoxCollider2D:
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6744302452536605128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shoot point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
