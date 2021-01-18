@@ -36,7 +36,7 @@ namespace Logic
             Plant placedPlant = Object
                 .Instantiate(plant.gameObject, GetCellCenterCoordinates(mousePosition), Quaternion.identity)
                 .GetComponent<Plant>();
-            placedPlant.Init(_playerData);
+            placedPlant.Init(_playerData, _cells[cellPosition.x, cellPosition.y]);
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
             callback?.Invoke();
         }
