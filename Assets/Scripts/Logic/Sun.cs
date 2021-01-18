@@ -3,17 +3,6 @@ using Data;
 
 namespace Logic
 {
-    public interface IObservable
-    {
-        event Action<IObservable> DataChanged;
-        void SetChanged();
-    }
-
-    public interface Observer
-    {
-        void SetModel();
-    }
-
     public class Sun
     {
         public event Action SunCollected;
