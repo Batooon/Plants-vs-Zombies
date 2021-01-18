@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Data;
 
@@ -9,9 +8,11 @@ namespace Logic
         [SerializeField] protected PlantData _plantData;
         public int Health => _plantData.Health;
         protected PlayerData _playerData;
+        protected Cell _standingCell;
         
-        public void Init(PlayerData playerData)
+        public void Init(PlayerData playerData, Cell standingCell)
         {
+            _standingCell = standingCell;
             _playerData = playerData;
         }
         
@@ -24,6 +25,7 @@ namespace Logic
 
         private void Die()
         {
+            _standingCell.IsEmpty = true;
             Destroy(gameObject);
         }
     }
