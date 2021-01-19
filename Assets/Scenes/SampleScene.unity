@@ -354,7 +354,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0.25179857, z: 0}
   m_MaxChunkCount: 16
@@ -1406,6 +1406,8 @@ MonoBehaviour:
   _tilemap: {fileID: 475986489}
   _playerPresenter: {fileID: 1930900878}
   _sunSkySpawner: {fileID: 1574250492}
+  _houseZone: {fileID: 1609828977}
+  _gameStatePresenter: {fileID: 1038938111}
   _fieldWidth: 9
   _fieldHeight: 4
 --- !u!1 &1555747152
