@@ -14,6 +14,8 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private Tilemap _tilemap;
     [SerializeField] private PlayerPresenter _playerPresenter;
     [SerializeField] private SkySunSpawner _sunSkySpawner;
+    [SerializeField] private HouseZone _houseZone;
+    [SerializeField] private GameStatePresenter _gameStatePresenter;
     [SerializeField] private int _fieldWidth;
     [SerializeField] private int _fieldHeight;
 
@@ -30,5 +32,9 @@ public class EntryPoint : MonoBehaviour
         _playerPresenter.Init(_playerData);
 
         _sunSkySpawner.Init(_playerData);
+
+        _houseZone.Init();
+
+        _gameStatePresenter.Init(_houseZone);
     }
 }
