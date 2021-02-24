@@ -842,7 +842,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.41960788, g: 0.8313726, b: 0.9921569, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -922,61 +922,50 @@ MonoBehaviour:
   _zombieWaves:
   - _delayStartTime: 20
     _zombies:
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 2
       _delaySpawnTime: 0
-    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.5
       _lineIndexToSpawn: 2
       _delaySpawnTime: 10
   - _delayStartTime: 5
     _zombies:
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 1
       _delaySpawnTime: 0
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 0
       _delaySpawnTime: 5
-    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.5
       _lineIndexToSpawn: 3
       _delaySpawnTime: 5
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 3
       _delaySpawnTime: 5
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 2
       _delaySpawnTime: 0.5
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 0
       _delaySpawnTime: 0.5
-    - _zombie: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.5
-      _lineIndexToSpawn: 3
+      _lineIndexToSpawn: 2
       _delaySpawnTime: 3
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 1
       _delaySpawnTime: 2
-    - _zombie: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
         type: 3}
-      _speed: 0.2
       _lineIndexToSpawn: 1
       _delaySpawnTime: 2
 --- !u!4 &698964833
@@ -992,6 +981,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &814781931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814781932}
+  m_Layer: 0
+  m_Name: Right Sun Spawn Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814781932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814781931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.5, y: 8.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876198220
 GameObject:
@@ -1229,6 +1248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a872e6d640f4eef88a593b7dd5dd9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseTimeScale: 0
+  _gameOverText: GAME OVER
   _finalText: {fileID: 248094428}
   _gameOverScreen: {fileID: 1555747152}
 --- !u!1 &1053574100
@@ -1246,7 +1267,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!212 &1053574101
 SpriteRenderer:
@@ -1355,6 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc109086c8b3cd149a1356e016fffc3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
   _playerData:
     _sunsAmount: 50
   _plantsShop: {fileID: 1564990112}
@@ -1628,7 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093bcd376b9d2434b8e9af075c99d132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantCardPrefab: {fileID: 4619929036786884339, guid: 370a7167e34fd2745ada2dadea63facc,
+  _plantCardPrefab: {fileID: 5824476121630214835, guid: 370a7167e34fd2745ada2dadea63facc,
     type: 3}
   _cardsParent: {fileID: 1564990107}
   _layout: {fileID: 1564990108}
@@ -1661,9 +1683,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1651b2800aee4a9799e8bf6008d50ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnDelay: 1.5
   _sun: {fileID: 30951230499660659, guid: 1f6b5fef3904f5249b196b10a5b81ce4, type: 3}
-  _leftBorder: 0.44
-  _rightBorder: 8.69
+  _leftBorder: {fileID: 1894951715}
+  _rightBorder: {fileID: 814781932}
   _spawnPosition: {fileID: 1564361495}
   _duration: 8
   _speed: 1
@@ -1714,7 +1737,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06350899, y: 2.7308686}
+  m_Offset: {x: 0.5435508, y: 2.7308686}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1725,7 +1748,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8729825, y: 6.461737}
+  m_Size: {x: 1.2641274, y: 6.461737}
   m_EdgeRadius: 0
 --- !u!4 &1609828976
 Transform:
@@ -1796,6 +1819,36 @@ Transform:
   - {fileID: 475986487}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894951714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894951715}
+  m_Layer: 0
+  m_Name: Left Sun Spawn Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894951715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894951714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 8.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1898433024
 GameObject:
