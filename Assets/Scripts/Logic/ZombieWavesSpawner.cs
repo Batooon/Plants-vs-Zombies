@@ -23,26 +23,23 @@ namespace Logic
 
         private IEnumerator StartWaveSpawning()
         {
-            for (int i = 0; i < _zombieWaves.Count; i++)
+            foreach (var currentWave in _zombieWaves)
             {
-                ZombieWaveData currentWave = _zombieWaves[i];
-
                 yield return new WaitForSecondsRealtime(currentWave.DelayStartTime);
 
-                for (int j = 0; j < currentWave.Zombies.Count; j++)
+                foreach (var currentZombie in currentWave.Zombies)
                 {
-                    ZombieData currentZombie = currentWave.Zombies[j];
                     yield return new WaitForSecondsRealtime(currentZombie.DelaySpawnTime);
-                    Zombie spawnedZombie = Spawn(currentZombie.ZombiePrefab, currentZombie.LineIndexToSpawn);
-                    spawnedZombie.Init(currentZombie.Speed);
+                    var spawnedZombie = Spawn(currentZombie.ZombieTemplatePrefab, currentZombie.LineIndexToSpawn);
+                    spawnedZombie.Init();
                 }
             }
         }
 
         private Zombie Spawn(Zombie zombie, int line)
         {
-            Vector3 spawnPosition = new Vector3(_spawnLine.position.x, _field.GetCellCenterVerticalPosition(line), 0);
-            return Instantiate(zombie.gameObject, spawnPosition, Quaternion.identity).GetComponent<Zombie>();
+            var spawnPosition = new Vector3(_spawnLine.position.x, _field.GetCellCenterVerticalPosition(line), 0);
+            return Instantiate(zombie, spawnPosition, Quaternion.identity);
         }
     }
 }

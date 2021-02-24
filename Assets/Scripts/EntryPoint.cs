@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 
 public class EntryPoint : MonoBehaviour
 {
+    [SerializeField] private Camera _camera;
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private PlantsShop _plantsShop;
     [SerializeField] private ZombieWavesSpawner _zombieWavesSpawner;
@@ -23,17 +24,15 @@ public class EntryPoint : MonoBehaviour
     
     private void Awake()
     {
-        _plantsField = new Field(_fieldWidth, _fieldHeight, _tilemap, _playerData);
+        _plantsField = new Field(_fieldWidth, _fieldHeight, _tilemap, _playerData, _camera);
 
-        _plantsShop.Init(_plantDatas, _plantsField, _playerData);
+        _plantsShop.Init(_plantDatas, _plantsField, _playerData, _camera);
 
         _zombieWavesSpawner.Init(_plantsField);
 
         _playerPresenter.Init(_playerData);
 
         _sunSkySpawner.Init(_playerData);
-
-        _houseZone.Init();
 
         _gameStatePresenter.Init(_houseZone);
     }

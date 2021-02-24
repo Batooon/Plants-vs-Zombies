@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Data;
 using DG.Tweening;
@@ -14,11 +13,13 @@ namespace Logic
         [SerializeField] private float _lifetime;
         private Sun _sun;
         private Sequence _dropping;
+        private Transform _transform;
 
         public void Init(int sunAmount, PlayerData playerData)
         {
             _sun = new Sun(sunAmount, playerData);
             _sun.SunCollected += OnSunCollected;
+            _transform = transform;
         }
 
         public void StartDroppingFromTheSky(float speed, float duration)
@@ -45,7 +46,8 @@ namespace Logic
         public void Drop()
         {
             _dropping = DOTween.Sequence();
-            Vector2 position = new Vector2(transform.position.x, transform.position.y);
+            var transformPosition = _transform.position;
+            var position = new Vector2(transformPosition.x, transformPosition.y);
             _dropping.Append(transform.DOLocalMove(Random.insideUnitCircle + position, _moveDuration).SetEase(_ease)
                 .OnComplete(StartLifetime));
         }
@@ -54,7 +56,7 @@ namespace Logic
         {
             for (float i = 0; i < duration; i += Time.deltaTime)
             {
-                transform.position += Vector3.down * speed * Time.deltaTime;
+                _transform.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
         }

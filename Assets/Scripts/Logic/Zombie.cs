@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,20 +9,21 @@ namespace Logic
         [SerializeField] private float _delayAttack;
         [SerializeField] private int _damage;
         [SerializeField] private int _health;
-
-        private float _speed;
+        [SerializeField] private float _speed;
         private bool _attacking;
+        private Transform _transform;
 
-        public void Init(float speed)
+        public void Init()
         {
-            _speed = speed;
+            _transform = transform;
         }
         
         private void Update()
         {
             if (_attacking)
                 return;
-            transform.position += Vector3.left * _speed * Time.deltaTime;
+            
+            _transform.position += Vector3.left * (_speed * Time.deltaTime);
         }
 
         public void GetDamage(int amount)
@@ -40,19 +40,19 @@ namespace Logic
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out Plant plant))
-            {
-                _attacking = true;
-                StartCoroutine(Eat(plant));
-            }
+            if (CollidedWithPlant(out var plant, other) == false)
+                return;
+            
+            _attacking = true;
+            StartCoroutine(Eat(plant));
         }
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out Plant plant))
-            {
-                _attacking = false;
-            }
+            if (CollidedWithPlant(out _, other) == false)
+                return;
+            
+            _attacking = false;
         }
 
         private IEnumerator Eat(Plant plant)
@@ -69,6 +69,11 @@ namespace Logic
                 plant.GetDamage(_damage);
                 yield return new WaitForSecondsRealtime(_delayAttack);
             }
+        }
+        
+        private bool CollidedWithPlant(out Plant plant, Collision2D other)
+        {
+            return other.gameObject.TryGetComponent(out plant);
         }
     }
 }
