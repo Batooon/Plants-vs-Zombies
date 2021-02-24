@@ -5,6 +5,8 @@ namespace Logic
 {
     public class GameStatePresenter : MonoBehaviour
     {
+        [SerializeField] private float _pauseTimeScale = 0f;
+        [SerializeField] private string _gameOverText;
         [SerializeField] private TextMeshProUGUI _finalText;
         [SerializeField] private GameObject _gameOverScreen;
         private HouseZone _house;
@@ -22,9 +24,9 @@ namespace Logic
 
         private void GameOver()
         {
-            Time.timeScale = 0f;
+            Time.timeScale = _pauseTimeScale;
             _gameOverScreen.SetActive(true);
-            _finalText.text = "GAME OVER";
+            _finalText.text = _gameOverText;
         }
     }
 }
