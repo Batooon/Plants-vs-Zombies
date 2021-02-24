@@ -2,31 +2,34 @@ using Data;
 using TMPro;
 using UnityEngine;
 
-public class PlayerPresenter : MonoBehaviour
+namespace Logic
 {
-    [SerializeField] private TextMeshProUGUI _sunsAmount;
-    [SerializeField] private string _sunsAmountTemplate;
+    public class PlayerPresenter : MonoBehaviour
+    {
+        [SerializeField] private TextMeshProUGUI _sunsAmount;
+        [SerializeField] private string _sunsAmountTemplate;
 
-    private PlayerData _playerData;
+        private PlayerData _playerData;
     
-    public void Init(PlayerData playerData)
-    {
-        _playerData = playerData;
-    }
+        public void Init(PlayerData playerData)
+        {
+            _playerData = playerData;
+        }
 
-    private void OnEnable()
-    {
-        _playerData.SunsAmountChanged += OnSunsAmountChanged;
-        OnSunsAmountChanged(_playerData.SunsAmount);
-    }
+        private void OnEnable()
+        {
+            _playerData.SunsAmountChanged += OnSunsAmountChanged;
+            OnSunsAmountChanged(_playerData.SunsAmount);
+        }
 
-    private void OnDisable()
-    {
-        _playerData.SunsAmountChanged -= OnSunsAmountChanged;
-    }
+        private void OnDisable()
+        {
+            _playerData.SunsAmountChanged -= OnSunsAmountChanged;
+        }
 
-    private void OnSunsAmountChanged(int newSunsAmount)
-    {
-        _sunsAmount.text = string.Format(_sunsAmountTemplate, newSunsAmount);
+        private void OnSunsAmountChanged(int newSunsAmount)
+        {
+            _sunsAmount.text = string.Format(_sunsAmountTemplate, newSunsAmount);
+        }
     }
 }
