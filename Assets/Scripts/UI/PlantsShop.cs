@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Data;
 using Logic;
 using UnityEngine;
@@ -10,31 +9,23 @@ namespace UI
     [RequireComponent(typeof(HorizontalLayoutGroup))]
     public class PlantsShop : MonoBehaviour
     {
-        [SerializeField] private GameObject _plantCardPrefab;
+        [SerializeField] private PlantCard _plantCardPrefab;
         [SerializeField] private Transform _cardsParent;
         [SerializeField] private HorizontalLayoutGroup _layout;
 
-        public void Init(IEnumerable<PlantShopData> plantDatas, Field field, PlayerData playerData)
+        public void Init(IEnumerable<PlantShopData> plantDatas, Field field, PlayerData playerData, Camera camera)
         {
             _layout = GetComponent<HorizontalLayoutGroup>();
-            if (_plantCardPrefab.TryGetComponent(out PlantCard plant))
+            foreach (var plantData in plantDatas)
             {
-                foreach (var plantData in plantDatas)
-                {
-                    var plantCard = Instantiate(_plantCardPrefab, _cardsParent)
-                        .GetComponent<PlantCard>();
-                    plantCard.Init(plantData, field, playerData);
-                }
-                
-                _layout.CalculateLayoutInputHorizontal();
-                _layout.CalculateLayoutInputVertical();
-                _layout.SetLayoutHorizontal();
-                _layout.SetLayoutVertical();
+                var plantCard = Instantiate(_plantCardPrefab, _cardsParent);
+                plantCard.Init(plantData, field, playerData, camera);
             }
-            else
-            {
-                throw new Exception("Plant card prefab does not contain a PlantCard.cs");
-            }
+
+            _layout.CalculateLayoutInputHorizontal();
+            _layout.CalculateLayoutInputVertical();
+            _layout.SetLayoutHorizontal();
+            _layout.SetLayoutVertical();
         }
     }
 }
