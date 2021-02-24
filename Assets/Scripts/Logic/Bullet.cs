@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Logic
@@ -10,7 +9,7 @@ namespace Logic
 
         private void Update()
         {
-            transform.position += Vector3.right * _speed * Time.deltaTime;
+            transform.position += Vector3.right * (_speed * Time.deltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
