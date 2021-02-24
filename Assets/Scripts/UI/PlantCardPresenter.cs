@@ -29,6 +29,12 @@ namespace UI
             _plantCard.PlantBuyed += StartRestoring;
         }
 
+        private void OnEnable()
+        {
+            if (_plantCard != null)
+                _plantCard.PlantBuyed += StartRestoring;
+        }
+
         private void OnDisable()
         {
             _plantCard.PlantBuyed -= StartRestoring;
@@ -43,7 +49,7 @@ namespace UI
         {
             for (float i = 0; i < _plantShopData.RestoreTime; i+=Time.deltaTime)
             {
-                float normalizedTime = i / _plantShopData.RestoreTime;
+                var normalizedTime = i / _plantShopData.RestoreTime;
                 _canvasGroup.alpha = Mathf.Lerp(_restoreStartingAlpha, _restoreMaxAlpha, normalizedTime);
                 yield return null;
             }
