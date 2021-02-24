@@ -1,11 +1,14 @@
-public class Cell
+namespace Logic
 {
-    private bool _isEmpty = true;
-
-    public bool IsEmpty
+    public class Cell
     {
-        get => _isEmpty;
-        set =>_isEmpty = value;
-    }
+        private bool _isEmpty = true;
 
+        public bool IsEmpty
+        {
+            get => _isEmpty;
+            set =>_isEmpty = value;
+        }
+
+    }
 }
