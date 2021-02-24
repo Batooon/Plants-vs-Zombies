@@ -13,13 +13,15 @@ namespace Logic
         private readonly int _height;
         private readonly Tilemap _renderField;
         private readonly PlayerData _playerData;
+        private readonly Camera _camera;
 
-        public Field(int width, int height, Tilemap renderField, PlayerData playerData)
+        public Field(int width, int height, Tilemap renderField, PlayerData playerData, Camera camera)
         {
             _width = width;
             _height = height;
             _renderField = renderField;
             _playerData = playerData;
+            _camera = camera;
             GenerateEmptyField();
         }
 
@@ -33,9 +35,7 @@ namespace Logic
             if (_cells[cellPosition.x, cellPosition.y].IsEmpty == false)
                 return;
 
-            Plant placedPlant = Object
-                .Instantiate(plant.gameObject, GetCellCenterCoordinates(mousePosition), Quaternion.identity)
-                .GetComponent<Plant>();
+            var placedPlant = Object.Instantiate(plant, GetCellCenterCoordinates(mousePosition), Quaternion.identity);
             placedPlant.Init(_playerData, _cells[cellPosition.x, cellPosition.y]);
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
             callback?.Invoke();
@@ -70,7 +70,7 @@ namespace Logic
 
         private Vector3Int GetCellCoordinates(Vector3 pointerPosition)
         {
-            var worldPoint = Camera.main.ScreenToWorldPoint(pointerPosition);
+            var worldPoint = _camera.ScreenToWorldPoint(pointerPosition);
 
             return _renderField.WorldToCell(worldPoint);
         }
