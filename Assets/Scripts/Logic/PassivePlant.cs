@@ -16,8 +16,7 @@ namespace Logic
 
         private void Spawn()
         {
-            SunPresenter spawnedSun = Instantiate(_objectToInstantiate.gameObject, _spawnPoint.position, Quaternion.identity)
-                .GetComponent<SunPresenter>();
+            var spawnedSun = Instantiate(_objectToInstantiate, _spawnPoint.position, Quaternion.identity);
             spawnedSun.Init(_sunAmount, _playerData);
             spawnedSun.Drop();
         }
