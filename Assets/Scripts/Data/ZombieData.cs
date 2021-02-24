@@ -7,13 +7,11 @@ namespace Data
     [Serializable]
     public class ZombieData
     {
-        [SerializeField] private Zombie _zombie;
-        [SerializeField] private float _speed;
+        [SerializeField] private Zombie _zombieTemplate;
         [SerializeField] private int _lineIndexToSpawn;
         [SerializeField] private float _delaySpawnTime;
 
-        public Zombie ZombiePrefab => _zombie;
-        public float Speed => _speed;
+        public Zombie ZombieTemplatePrefab => _zombieTemplate;
         public int LineIndexToSpawn => _lineIndexToSpawn;
         public float DelaySpawnTime => _delaySpawnTime;
     }
