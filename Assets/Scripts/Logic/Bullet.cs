@@ -1,6 +1,7 @@
+using PvZ.Logic.Zombies;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic
 {
     public class Bullet : MonoBehaviour
     {
@@ -14,11 +15,11 @@ namespace Logic
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out Zombie zombie))
-            {
-                zombie.GetDamage(_damage);
-                Destroy(gameObject);
-            }
+            if (other.gameObject.TryGetComponent(out Zombie zombie) == false) 
+                return;
+            
+            zombie.GetDamage(_damage);
+            Destroy(gameObject);
         }
     }
 }
