@@ -1,7 +1,8 @@
 using System;
+using PvZ.Logic.GameField;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic.Plants
 {
     public class PlantTemplate : MonoBehaviour
     {

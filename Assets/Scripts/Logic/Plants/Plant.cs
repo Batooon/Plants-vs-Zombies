@@ -1,19 +1,20 @@
+using PvZ.Data;
+using PvZ.Logic.GameField;
 using UnityEngine;
-using Data;
 
-namespace Logic
+namespace PvZ.Logic.Plants
 {
     public class Plant : MonoBehaviour
     {
         [SerializeField] protected PlantData _plantData;
         public int Health => _plantData.Health;
-        protected PlayerData _playerData;
-        protected Cell _standingCell;
+        protected PlayerData PlayerData;
+        private Cell _standingCell;
         
         public void Init(PlayerData playerData, Cell standingCell)
         {
             _standingCell = standingCell;
-            _playerData = playerData;
+            PlayerData = playerData;
         }
         
         public void GetDamage(int amount)

@@ -1,6 +1,7 @@
+using PvZ.Logic.Sun;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic.Plants
 {
     public class PassivePlant : Plant
     {
@@ -17,7 +18,7 @@ namespace Logic
         private void Spawn()
         {
             var spawnedSun = Instantiate(_objectToInstantiate, _spawnPoint.position, Quaternion.identity);
-            spawnedSun.Init(_sunAmount, _playerData);
+            spawnedSun.Init(_sunAmount, PlayerData);
             spawnedSun.Drop();
         }
     }

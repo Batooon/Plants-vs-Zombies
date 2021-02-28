@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic.Plants
 {
     public class ActivePlant : Plant
     {

@@ -1,15 +1,16 @@
 using System;
-using Data;
-using UI;
+using PvZ.Data;
+using PvZ.Logic.GameField;
+using PvZ.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Logic
+namespace PvZ.Logic.Plants
 {
     [RequireComponent(typeof(PlantCardPresenter))]
     public class PlantCard : MonoBehaviour, IPointerDownHandler
     {
-        public event Action PlantBuyed;
+        public event Action PlantBought;
         private PlantTemplate _templatePlant;
         private bool _isCardAvailable = true;
         private Field _field;
@@ -58,13 +59,12 @@ namespace Logic
         {
             _playerData.SunsAmount -= _plantShopData.Cost;
             _isCardAvailable = false;
-            PlantBuyed?.Invoke();
+            PlantBought?.Invoke();
         }
         
-        //TODO: Сделать затемнение карточки, и постепенное её восстановление
-
         public void OnCardRestored()
         {
+            //TODO: Сделать затемнение карточки, и постепенное её восстановление
             _isCardAvailable = true;
         }
         
