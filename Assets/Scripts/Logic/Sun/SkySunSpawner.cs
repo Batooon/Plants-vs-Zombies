@@ -1,7 +1,7 @@
-using Data;
+using PvZ.Data;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic.Sun
 {
     public class SkySunSpawner : MonoBehaviour
     {

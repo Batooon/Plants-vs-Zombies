@@ -1,7 +1,7 @@
 using System;
-using Data;
+using PvZ.Data;
 
-namespace Logic
+namespace PvZ.Logic.Sun
 {
     public class Sun
     {

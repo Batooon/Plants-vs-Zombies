@@ -1,10 +1,10 @@
 using System.Collections;
-using Data;
 using DG.Tweening;
+using PvZ.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Logic
+namespace PvZ.Logic.Sun
 {
     public class SunPresenter : MonoBehaviour
     {
