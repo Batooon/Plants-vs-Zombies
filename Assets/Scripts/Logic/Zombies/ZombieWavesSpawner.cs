@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Data;
+using PvZ.Data;
+using PvZ.Logic.GameField;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic.Zombies
 {
     public class ZombieWavesSpawner : MonoBehaviour
     {
