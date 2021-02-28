@@ -1,10 +1,11 @@
 using System;
-using Data;
+using PvZ.Data;
+using PvZ.Logic.Plants;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Object = UnityEngine.Object;
 
-namespace Logic
+namespace PvZ.Logic.GameField
 {
     public class Field
     {
