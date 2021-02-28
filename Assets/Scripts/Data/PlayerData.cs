@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Data
+namespace PvZ.Data
 {
     [Serializable]
     public class PlayerData

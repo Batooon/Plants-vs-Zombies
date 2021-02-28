@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-using Data;
-using Logic;
+using PvZ.Data;
+using PvZ.Logic;
+using PvZ.Logic.GameField;
+using PvZ.Logic.Plants;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace PvZ.UI
 {
     [RequireComponent(typeof(HorizontalLayoutGroup))]
     public class PlantsShop : MonoBehaviour

@@ -1,8 +1,8 @@
-using Data;
+using PvZ.Data;
 using TMPro;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic
 {
     public class PlayerPresenter : MonoBehaviour
     {

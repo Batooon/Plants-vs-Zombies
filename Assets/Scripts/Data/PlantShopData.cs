@@ -1,8 +1,9 @@
 ﻿using System;
-using Logic;
+using PvZ.Logic;
+using PvZ.Logic.Plants;
 using UnityEngine;
 
-namespace Data
+namespace PvZ.Data
 {
     [Serializable]
     public class PlantShopData

@@ -1,7 +1,8 @@
 using System;
+using PvZ.Logic.Zombies;
 using UnityEngine;
 
-namespace Logic
+namespace PvZ.Logic
 {
     [RequireComponent(typeof(Collider2D))]
     public class HouseZone : MonoBehaviour

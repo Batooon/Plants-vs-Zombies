@@ -1,11 +1,12 @@
 ﻿using System.Collections;
-using Data;
-using Logic;
+using PvZ.Data;
+using PvZ.Logic;
+using PvZ.Logic.Plants;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace PvZ.UI
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class PlantCardPresenter : MonoBehaviour
@@ -26,18 +27,18 @@ namespace UI
             _canvasGroup = GetComponent<CanvasGroup>();
             _plantImage.sprite = plantShopData.Icon;
             _costText.text = string.Format(_costTemplate, plantShopData.Cost);
-            _plantCard.PlantBuyed += StartRestoring;
+            _plantCard.PlantBought += StartRestoring;
         }
 
         private void OnEnable()
         {
             if (_plantCard != null)
-                _plantCard.PlantBuyed += StartRestoring;
+                _plantCard.PlantBought += StartRestoring;
         }
 
         private void OnDisable()
         {
-            _plantCard.PlantBuyed -= StartRestoring;
+            _plantCard.PlantBought -= StartRestoring;
         }
 
         private void StartRestoring()
