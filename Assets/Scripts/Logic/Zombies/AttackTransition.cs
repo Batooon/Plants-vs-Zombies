@@ -10,8 +10,10 @@ namespace PvZ.Logic.Zombies
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (Zombie.CollidedWithPlant(out _, other))
-                NeedTransit = true;
+            if (Zombie.CollidedWithPlant(out var plant, other) == false)
+                return;
+            TargetState.SetTargetPlant(plant);
+            NeedTransit = true;
         }
     }
 }
