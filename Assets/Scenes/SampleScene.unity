@@ -354,7 +354,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0.25179857, z: 0}
   m_MaxChunkCount: 16
@@ -922,49 +922,49 @@ MonoBehaviour:
   _zombieWaves:
   - _delayStartTime: 20
     _zombies:
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 2
       _delaySpawnTime: 0
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 2
       _delaySpawnTime: 10
   - _delayStartTime: 5
     _zombies:
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 1
       _delaySpawnTime: 0
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 0
       _delaySpawnTime: 5
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 3
       _delaySpawnTime: 5
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 3
       _delaySpawnTime: 5
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 2
       _delaySpawnTime: 0.5
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 0
       _delaySpawnTime: 0.5
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 2
       _delaySpawnTime: 3
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: 3c723bfc3ec83004387550eb59104ffb,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 1
       _delaySpawnTime: 2
-    - _zombieTemplate: {fileID: 3851172951114789987, guid: d9010f2eee5313748ad573d95e1d35c9,
+    - _zombieTemplate: {fileID: 4819978667510227847, guid: d3b1e26bd6353b248a7ac8d18b562aff,
         type: 3}
       _lineIndexToSpawn: 1
       _delaySpawnTime: 2
@@ -1307,7 +1307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 0bdb26e46bb79124590ddf44fbf12141, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1432,6 +1432,7 @@ MonoBehaviour:
   _gameStatePresenter: {fileID: 1038938111}
   _fieldWidth: 9
   _fieldHeight: 4
+  _timeScale: 1
 --- !u!1 &1555747152
 GameObject:
   m_ObjectHideFlags: 0
