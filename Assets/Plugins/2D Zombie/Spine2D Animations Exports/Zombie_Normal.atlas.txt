@@ -1,0 +1,41 @@
+
+Zombie_Normal.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01_arm_left_n
+  rotate: false
+  xy: 892, 36
+  size: 91, 318
+  orig: 91, 318
+  offset: 0, 0
+  index: -1
+01_arm_right_n
+  rotate: true
+  xy: 380, 7
+  size: 142, 327
+  orig: 142, 327
+  offset: 0, 0
+  index: -1
+01_body_n
+  rotate: true
+  xy: 380, 151
+  size: 203, 358
+  orig: 203, 358
+  offset: 0, 0
+  index: -1
+01_head_n
+  rotate: false
+  xy: 2, 2
+  size: 376, 352
+  orig: 376, 352
+  offset: 0, 0
+  index: -1
+01_leg_right_n
+  rotate: false
+  xy: 740, 85
+  size: 150, 269
+  orig: 150, 269
+  offset: 0, 0
+  index: -1
