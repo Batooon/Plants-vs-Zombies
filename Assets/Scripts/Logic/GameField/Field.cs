@@ -90,12 +90,11 @@ namespace PvZ.Logic.GameField
             }
         }
         
-        private Plant InitPlant(Plant plant, Vector3Int cellPosition, Vector3 mousePosition)
+        private void InitPlant(Plant plant, Vector3Int cellPosition, Vector3 mousePosition)
         {
             var placedPlant = Object.Instantiate(plant, GetCellCenterCoordinates(mousePosition), Quaternion.identity);
             placedPlant.Init(_playerData, _cells[cellPosition.x, cellPosition.y]);
             _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
-            return placedPlant;
         }
         
         private bool IsCellEmpty(Vector3Int cellPosition)
