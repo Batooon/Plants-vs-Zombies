@@ -64,7 +64,6 @@ namespace PvZ.Logic.Plants
         
         public void OnCardRestored()
         {
-            //TODO: Сделать затемнение карточки, и постепенное её восстановление
             _isCardAvailable = true;
         }
         

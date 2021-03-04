@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using PvZ.Data;
-using PvZ.Logic;
+﻿using PvZ.Data;
 using PvZ.Logic.Plants;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace PvZ.UI
 {
@@ -43,19 +42,8 @@ namespace PvZ.UI
 
         private void StartRestoring()
         {
-            StartCoroutine(RestoreCard());
-        }
-
-        private IEnumerator RestoreCard()
-        {
-            for (float i = 0; i < _plantShopData.RestoreTime; i+=Time.deltaTime)
-            {
-                var normalizedTime = i / _plantShopData.RestoreTime;
-                _canvasGroup.alpha = Mathf.Lerp(_restoreStartingAlpha, _restoreMaxAlpha, normalizedTime);
-                yield return null;
-            }
-            _plantCard.OnCardRestored();
-            _canvasGroup.alpha = _restoreMaxAlpha;
+            _canvasGroup.alpha = _restoreStartingAlpha;
+            _canvasGroup.DOFade(_restoreMaxAlpha, _plantShopData.RestoreTime).OnComplete(_plantCard.OnCardRestored);
         }
     }
 }
