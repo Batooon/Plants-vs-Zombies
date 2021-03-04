@@ -20,8 +20,6 @@ namespace PvZ.Logic.GameField
         private readonly PlayerData _playerData;
         private readonly Camera _camera;
 
-        public event Action<Plant> PlantPlaced;
-
         public Field(int width, int height, Tilemap renderField, PlayerData playerData, Camera camera)
         {
             _width = width;
@@ -42,9 +40,8 @@ namespace PvZ.Logic.GameField
             if (IsCellEmpty(cellPosition) == false)
                 return;
             
-            var placedPlant = InitPlant(plant, cellPosition, mousePosition);
+            InitPlant(plant, cellPosition, mousePosition);
             callback?.Invoke();
-            PlantPlaced?.Invoke(placedPlant);
         }
 
         public float GetCellCenterVerticalPosition(int line)
