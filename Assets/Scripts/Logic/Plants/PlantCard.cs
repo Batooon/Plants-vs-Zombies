@@ -43,7 +43,7 @@ namespace PvZ.Logic.Plants
         private GameObject SpawnTemplate()
         {
             var plantTemplate = Instantiate(_templatePlant, _rectTransform.position, Quaternion.identity);
-            plantTemplate.Init(_field, _plantShopData.PlantToSpawn, _camera, BuyPlant);
+            plantTemplate.Init(_field, _plantShopData.PlantToSpawn, _camera).SetOnPlaced(BuyPlant);
             var plant = plantTemplate.gameObject;
             plant.SetActive(false);
             return plant;

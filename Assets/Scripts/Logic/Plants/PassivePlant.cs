@@ -14,7 +14,7 @@ namespace PvZ.Logic.Plants
         {
             InvokeRepeating(nameof(Spawn), _delayAction, _delayAction);
         }
-
+        
         private void Spawn()
         {
             var spawnedSun = Instantiate(_objectToInstantiate, _spawnPoint.position, Quaternion.identity);

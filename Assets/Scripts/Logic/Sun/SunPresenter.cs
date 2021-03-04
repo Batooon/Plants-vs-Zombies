@@ -63,18 +63,7 @@ namespace PvZ.Logic.Sun
 
         private void StartLifetime()
         {
-            StartCoroutine(DestroyAfterLifetime());
-        }
-        
-        private IEnumerator DestroyAfterLifetime()
-        {
-            while (_lifetime > 0)
-            {
-                _lifetime -= Time.deltaTime;
-                yield return null;
-            }
-
-            Destroy(gameObject);
+            Destroy(gameObject, _lifetime);
         }
     }
 }

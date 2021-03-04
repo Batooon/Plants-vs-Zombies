@@ -9,12 +9,18 @@ namespace PvZ.Logic.GameField
 {
     public class Field
     {
+        private const int WidthDimension = 0;
+        private const int HeightDimension = 1;
+        private const int HeightMinimumBorderCoordinate = 0;
+        private const int WidthMinimumBorderCoordinate = 0;
         private Cell[,] _cells;
         private readonly int _width;
         private readonly int _height;
         private readonly Tilemap _renderField;
         private readonly PlayerData _playerData;
         private readonly Camera _camera;
+
+        public event Action<Plant> PlantPlaced;
 
         public Field(int width, int height, Tilemap renderField, PlayerData playerData, Camera camera)
         {
@@ -26,20 +32,19 @@ namespace PvZ.Logic.GameField
             GenerateEmptyField();
         }
 
-        public void TryPlacePlant(Vector3 mousePosition, Plant plant, Action callback)
+        public void TryPlacePlant(Vector3 mousePosition, Plant plant, Action callback = null)
         {
             var cellPosition = GetCellCoordinates(mousePosition);
 
             if (IsOnFieldCriteria(cellPosition) == false)
                 return;
             
-            if (_cells[cellPosition.x, cellPosition.y].IsEmpty == false)
+            if (IsCellEmpty(cellPosition) == false)
                 return;
-
-            var placedPlant = Object.Instantiate(plant, GetCellCenterCoordinates(mousePosition), Quaternion.identity);
-            placedPlant.Init(_playerData, _cells[cellPosition.x, cellPosition.y]);
-            _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
+            
+            var placedPlant = InitPlant(plant, cellPosition, mousePosition);
             callback?.Invoke();
+            PlantPlaced?.Invoke(placedPlant);
         }
 
         public float GetCellCenterVerticalPosition(int line)
@@ -63,10 +68,10 @@ namespace PvZ.Logic.GameField
         
         private bool IsOnFieldCriteria(Vector3Int cell)
         {
-            return _cells.GetLength(0) > cell.x
-                   && _cells.GetLength(1) > cell.y
-                   && cell.x >= 0
-                   && cell.y >= 0;
+            return _cells.GetLength(WidthDimension) > cell.x
+                   && _cells.GetLength(HeightDimension) > cell.y
+                   && cell.x >= HeightMinimumBorderCoordinate
+                   && cell.y >= WidthMinimumBorderCoordinate;
         }
 
         private Vector3Int GetCellCoordinates(Vector3 pointerPosition)
@@ -79,13 +84,26 @@ namespace PvZ.Logic.GameField
         private void GenerateEmptyField()
         {
             _cells = new Cell[_width, _height];
-            for (var i = 0; i < _cells.GetLength(0); i++)
+            for (var i = 0; i < _cells.GetLength(WidthDimension); i++)
             {
-                for (var j = 0; j < _cells.GetLength(1); j++)
+                for (var j = 0; j < _cells.GetLength(HeightDimension); j++)
                 {
                     _cells[i, j] = new Cell();
                 }
             }
+        }
+        
+        private Plant InitPlant(Plant plant, Vector3Int cellPosition, Vector3 mousePosition)
+        {
+            var placedPlant = Object.Instantiate(plant, GetCellCenterCoordinates(mousePosition), Quaternion.identity);
+            placedPlant.Init(_playerData, _cells[cellPosition.x, cellPosition.y]);
+            _cells[cellPosition.x, cellPosition.y].IsEmpty = false;
+            return placedPlant;
+        }
+        
+        private bool IsCellEmpty(Vector3Int cellPosition)
+        {
+            return _cells[cellPosition.x, cellPosition.y].IsEmpty;
         }
     }
 }

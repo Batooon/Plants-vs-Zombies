@@ -6,28 +6,34 @@ namespace PvZ.Logic.Plants
 {
     public class PlantTemplate : MonoBehaviour
     {
+        private const int LeftMouseButtonIndex = 0;
         private Camera _camera;
         private Field _field;
         private Plant _fieldPlant;
-        private event Action _callback;
+        private event Action _onPlanted;
         private Transform _transform;
 
-        public void Init(Field field, Plant plantOnField, Camera camera, Action callback)
+        public PlantTemplate Init(Field field, Plant plantOnField, Camera camera)
         {
             _fieldPlant = plantOnField;
             _field = field;
             _camera = camera;
             _transform = transform;
-            _callback = callback;
+            return this;
+        }
+
+        public void SetOnPlaced(Action onPlaced)
+        {
+            _onPlanted = onPlaced;
         }
 
         private void Update()
         {
 #if UNITY_EDITOR || UNITY_WEBGL
             var worldMousePosition = Input.mousePosition;
-            if(Input.GetMouseButtonUp(0))
+            if(Input.GetMouseButtonUp(LeftMouseButtonIndex))
                 TryPlacePlant(worldMousePosition);
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(LeftMouseButtonIndex))
                 Drag(worldMousePosition);
 #endif
         }
@@ -43,7 +49,7 @@ namespace PvZ.Logic.Plants
 
         private void TryPlacePlant(Vector3 worldMousePosition)
         {
-            _field.TryPlacePlant(worldMousePosition, _fieldPlant, _callback);
+            _field.TryPlacePlant(worldMousePosition, _fieldPlant, _onPlanted);
             gameObject.SetActive(false);
         }
     }

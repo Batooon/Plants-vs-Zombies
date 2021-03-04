@@ -9,6 +9,7 @@ namespace PvZ.Logic.Plants
         [SerializeField] protected PlantData _plantData;
         public int Health => _plantData.Health;
         protected PlayerData PlayerData;
+        private const int DeathHpLimit = 0;
         private Cell _standingCell;
         
         public void Init(PlayerData playerData, Cell standingCell)
@@ -20,7 +21,7 @@ namespace PvZ.Logic.Plants
         public void GetDamage(int amount)
         {
             _plantData.Health -= amount;
-            if (_plantData.Health <= 0)
+            if (_plantData.Health <= DeathHpLimit)
                 Die();
         }
 
