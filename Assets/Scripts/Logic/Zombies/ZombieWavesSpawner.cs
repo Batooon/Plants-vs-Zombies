@@ -40,7 +40,7 @@ namespace PvZ.Logic.Zombies
         private Zombie Spawn(Zombie zombie, int line)
         {
             var spawnPosition = new Vector3(_spawnLine.position.x, _field.GetCellCenterVerticalPosition(line), 0);
-            return Instantiate(zombie, spawnPosition, Quaternion.identity);
+            return Instantiate(zombie, spawnPosition, zombie.transform.rotation);
         }
     }
 }
