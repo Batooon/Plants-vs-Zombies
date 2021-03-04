@@ -6,11 +6,13 @@ namespace PvZ.Logic.Zombies
     {
         [SerializeField] private ZombieState _firstState;
         private ZombieState _currentState;
+        private Animator _animator;
 
-        public void Init()
+        public void Init(Animator animator)
         {
+            _animator = animator;
             _currentState = _firstState;
-            _currentState.Enter();
+            _currentState.Enter(_animator);
         }
 
         private void Update()
@@ -28,7 +30,7 @@ namespace PvZ.Logic.Zombies
 
             _currentState = nextState;
 
-            _currentState.Enter();
+            _currentState.Enter(_animator);
         }
     }
 }

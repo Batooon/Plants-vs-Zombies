@@ -10,32 +10,39 @@ namespace PvZ.Logic.Zombies
     {
         [SerializeField] private int _damage;
         [SerializeField] private float _delayAttack;
-        private bool _attacking;
+        private WaitForSecondsRealtime _delay;
+        private readonly int Attack = Animator.StringToHash("attack");
 
-        private void Update()
+        private void Awake()
         {
+            _delay = new WaitForSecondsRealtime(_delayAttack);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnEnable()
         {
-            if (Zombie.CollidedWithPlant(out var plant, other))
-            {
-                StartCoroutine(Eat(plant));
-            }
+            if (Animator != null)
+                Animator.SetTrigger(Attack);
+            StartCoroutine(EatPlant());
         }
 
-        private IEnumerator Eat(Plant plant)
+        private void OnDisable()
+        {
+            if (Animator != null)
+                Animator.ResetTrigger(Attack);
+        }
+
+        private IEnumerator EatPlant()
         {
             while (enabled)
             {
-                if (plant.Health - _damage <= 0)
+                if (Plant.Health - _damage <= 0)
                 {
-                    ApplyDamageTo(plant);
+                    ApplyDamageTo(Plant);
                     yield break;
                 }
 
-                ApplyDamageTo(plant);
-                yield return new WaitForSecondsRealtime(_delayAttack);
+                ApplyDamageTo(Plant);
+                yield return _delay;
             }
         }
 
