@@ -1,4 +1,3 @@
-using PvZ.Logic.Zombies;
 using UnityEngine;
 
 namespace PvZ.Logic
@@ -15,10 +14,10 @@ namespace PvZ.Logic
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out Zombie zombie) == false) 
+            if (other.gameObject.TryGetComponent(out IDamageable damageable) == false) 
                 return;
             
-            zombie.GetDamage(_damage);
+            damageable.ApplyDamage(_damage);
             Destroy(gameObject);
         }
     }
