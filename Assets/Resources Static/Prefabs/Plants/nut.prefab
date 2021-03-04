@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantData:
-    _health: 4500
+    _health: 450
