@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PvZ.Data;
 using PvZ.Logic;
 using PvZ.Logic.GameField;
@@ -24,6 +25,9 @@ namespace PvZ
         [SerializeField] private GameStatePresenter _gameStatePresenter;
         [SerializeField] private int _fieldWidth;
         [SerializeField] private int _fieldHeight;
+        #if UNITY_EDITOR
+        [SerializeField] private float _timeScale;
+        #endif
 
         private Field _plantsField;
     
@@ -41,5 +45,12 @@ namespace PvZ
 
             _gameStatePresenter.Init(_houseZone);
         }
+        
+        #if UNITY_EDITOR
+        private void OnValidate()
+        {
+            Time.timeScale = _timeScale;
+        }
+#endif
     }
 }
